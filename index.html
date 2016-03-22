@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="">
 	<style type="text/css">
 		#btn, #btn1{
-			width: 166px;
+			width: 136px;
 			margin: 10px;
 			padding: 8px;
 			border: 1px solid #CCC;
@@ -23,13 +23,11 @@
 			console.log(document.getElementsByName('myName'));
 			var count = 0;
 			document.getElementById("btn").onclick = function (ev) {
-				debugger
-				var e = event || ev;
+				var e = ev || window.event;
 				window.open('test.html','localStorage-test');
 			};
 			document.getElementById("btn1").onclick = function (ev) {
-				var e = event || ev;
-				// var str = JSON.stringify({'left': count + 'px', 'top': (++count) + 'px'});
+				var e = ev || window.event;
 				localStorage.setItem("pos", JSON.stringify({'left': count + 'px', 'top': (++count) + 'px'}));
 				// localStorage.pos = JSON.stringify({'left': count + 'px', 'top': (++count) + 'px'});
 			};
@@ -38,7 +36,7 @@
 	</script>
 </head>
 <body>
-	<div id="btn" name="myName">localStorage-index</div>
-	<div id="btn1">localStorage-index1</div>
+	<div id="btn" name="myName">open testPage</div>
+	<div id="btn1">control testPage</div>
 </body>
 </html>
